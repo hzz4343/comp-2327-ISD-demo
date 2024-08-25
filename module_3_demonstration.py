@@ -19,15 +19,11 @@ def main():
     students.append(Student(20240007, "Donna Smith", Department.COMPUTER_SCIENCE))
     students.append(Student(20240008, "Eric Best", Department.EDUCATION))
 
-
     for student in students:
-        print(f"\n{str(student)}") 
+        print(f"\n{str(student)}")
 
         ### DECORATOR ###
-    
-            
+
+
 if __name__ == "__main__":
     main()
-    
-    
-    
