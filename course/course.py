@@ -1,3 +1,7 @@
+"""
+Description: Defines the course class.
+Author: Damien Altenburg
+"""
 from department.department import Department
 
 class Course:
