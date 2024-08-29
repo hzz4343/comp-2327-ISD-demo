@@ -1,5 +1,5 @@
 """
-Description: Defines the course class.
+Description: Defines the Course class.
 Author: Damien Altenburg
 """
 from department.department import Department
@@ -9,7 +9,7 @@ class Course:
     """
 
     def __init__(self, name: str, department: Department, credit_hours: int):
-        """ Initializes a new instance of the Course class.
+        """Initializes a new instance of the Course class.
 
         Args:
             name (str): The name of the course.
@@ -22,13 +22,13 @@ class Course:
             TypeError: Raised when the department or credit_hours is not the expected type.
         """
         if len(name.strip()) == 0:
-            raise ValueError("name cannot be blank.")
+            raise ValueError("The name cannot be blank.")
 
         if not isinstance(department, Department):
-            raise TypeError(f"department object must be a Department type.")
+            raise TypeError(f"The department object must be a Department type.")
 
         if not isinstance(credit_hours, int):
-            raise TypeError(f"credit_hours object must be an int type.")
+            raise TypeError(f"The credit_hours object must be an int type.")
 
         self.__name = name
         self.__department = department
