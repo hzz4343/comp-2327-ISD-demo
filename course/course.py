@@ -71,3 +71,5 @@ class Course:
             f"Department: {self.__department.name.replace('_', ' ').title()}\n"
             f"Credit Hours: {self.__credit_hours}"
         )
+        
+        

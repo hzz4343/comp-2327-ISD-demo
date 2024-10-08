@@ -1,10 +1,12 @@
 import random
 from department.department import Department
+from patterns.singleton.singleton_student_manager import SingletonStudentManager
+from student.student_decoratable import StudentDecoratable
 
-class Student:
+class Student(StudentDecoratable):
     """Represents a student in a school.
     """
-    def __init__(self, student_number: int, name: str, department: Department):
+    def __init__(self, name: str, department: Department):
         """
         Initializes a new instance of the Student class.
 
@@ -16,10 +18,6 @@ class Student:
         Raises:
             ValueError: if any of the arguments are invalid.
         """
-        if isinstance(student_number, int):
-            self.__student_number = student_number
-        else:
-            raise ValueError("Student Number must be a whole number.")
 
         if len(name.strip()) > 0:
             self.__name = name
@@ -31,6 +29,7 @@ class Student:
         else:
             raise ValueError("Department must be one of the predefined Departments.")
 
+        self.__student_number = SingletonStudentManager().get_student_number()
         self.__grade_point_average = random.uniform(0, 4.5)
 
     @property
@@ -68,7 +67,6 @@ class Student:
             float - The grade point average value associated with the Student instance.
         """
         return self.__grade_point_average
-
 
     def __str__(self) ->str:
         """Returns a string representation of the Student instance.
