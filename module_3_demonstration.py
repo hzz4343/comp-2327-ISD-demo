@@ -1,3 +1,4 @@
+from student.council_decorator import CouncilDecorator
 from student.student import Student
 from department.department import Department
 from course import *
@@ -41,6 +42,8 @@ def main():
     student = students[0]
     print(student.grade_point_average)
     student = VolunteerDecorator(student)
+    print(student.grade_point_average)
+    student = CouncilDecorator(student)
     print(student.grade_point_average)
 if __name__ == "__main__":
     main()
